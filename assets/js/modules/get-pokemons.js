@@ -2,7 +2,7 @@ import showInfoPokemon from "./show-info-pokemon.js";
 
 export default function initGetPokemons() {
   async function getPokemons() {
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= 250; i++) {
       const json = await (
         await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
       ).json();
