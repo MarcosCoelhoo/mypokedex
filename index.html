@@ -18,16 +18,60 @@
 </head>
 
 <body>
-  <main class="container">
+  <main class="container active">
     <h1 class="container-title">MyPokédex</h1>
     <section class="list-container">
       <ul data-list="" class="list-pokemon">
 
-
-
       </ul>
     </section>
   </main>
+
+  <section class="info-pokemon">
+    <div class="pokemon-header">
+      <div class="close">
+        X
+      </div>
+      <h2 data-pokemon="name">Bulbasaur</h2>
+    </div>
+    <section class="content">
+      <div class="images">
+        <div class="landing">
+          <img data-image="landing" src="./assets/images/pokemon.png" alt="">
+        </div>
+        <ul data-image="list" class="list-images">
+          <li class="image active">
+            <img data-image="default" src="./assets/images/pokemon.png" alt="">
+          </li>
+          <li class="image">
+            <img data-image="shiny" src="./assets/images/pokemon-shiny.png" alt="">
+          </li>
+        </ul>
+      </div>
+
+      <div class="infos-container">
+        <ul class="infos">
+          <li class="abilities">
+            <h3>Abilities</h3>
+            <ul data-pokemon="abilities">
+
+            </ul>
+          </li>
+
+          <li class="weight">
+            <h3>Weight</h3>
+            <p data-pokemon="weight">2.0 kg</p>
+          </li>
+
+          <li class="height">
+            <h3>Height</h3>
+            <p data-pokemon="height">1.1 m</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </section>
 </body>
 
 </html>

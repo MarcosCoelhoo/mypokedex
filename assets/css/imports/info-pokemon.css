@@ -1,0 +1,139 @@
+.info-pokemon {
+  display: none;
+}
+
+@keyframes showContainer {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-pokemon.active {
+  display: block;
+  animation: showContainer 0.5s forwards;
+}
+
+.info-pokemon .pokemon-header {
+  background: #dfd3c3;
+  border-radius: 0 0 16px 16px;
+  padding: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.pokemon-header .close {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.75rem;
+  color: #393b40;
+}
+
+.pokemon-header h2 {
+  font-size: 2.25rem;
+  color: #393b40;
+  text-transform: capitalize;
+}
+
+.content {
+  padding: 0 164px;
+}
+
+.images {
+  margin-bottom: 24px;
+}
+
+.images .landing {
+  background: #f2f2f2;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.landing img {
+  max-width: 42%;
+}
+
+.images .list-images {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.list-images .image {
+  max-width: 84px;
+  border-radius: 8px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.list-images .image.active {
+  border: 2px solid #646c76;
+}
+
+.list-images .image img {
+  pointer-events: none;
+}
+
+.infos-container {
+  margin-bottom: 24px;
+}
+
+.infos-container .infos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.infos h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #393b40;
+  text-transform: capitalize;
+}
+
+.infos p {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #646c76;
+  text-transform: capitalize;
+}
+
+@media (max-width: 800px) {
+  .content {
+    padding: 0 64px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 0;
+  }
+
+  .pokemon-header .close {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .infos h3 {
+    font-size: 24px;
+  }
+
+  .infos p {
+    font-size: 16px;
+  }
+
+  .list-images .image {
+    max-width: 64px;
+  }
+}

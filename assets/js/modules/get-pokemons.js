@@ -1,3 +1,5 @@
+import showInfoPokemon from "./show-info-pokemon.js";
+
 export default function initGetPokemons() {
   async function getPokemons() {
     for (let i = 1; i <= 100; i++) {
@@ -5,22 +7,24 @@ export default function initGetPokemons() {
         await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
       ).json();
 
-      const name = json.name;
-      const types = json.types;
-      const id = json.id.toString().padStart(3, "0");
-      const image = json.sprites.other["official-artwork"].front_default;
+      const name = json.name,
+        types = json.types,
+        id = json.id,
+        idFormated = json.id.toString().padStart(3, "0"),
+        image = json.sprites.other["official-artwork"].front_default;
 
       const listParent = document.querySelector("[data-list]");
 
       const li = document.createElement("li");
       li.classList.add("pokemon");
+      li.dataset.id = id;
 
       li.innerHTML = `
         <div class="image">
           <img src="${image}" alt="${name}" loading="lazy">
         </div>
         <div class="content">
-          <p class="id">${id}</p>
+          <p class="id">${idFormated}</p>
           <h2 class="name">${name}</h2>
           <ul class="type-list">
 
@@ -40,6 +44,7 @@ export default function initGetPokemons() {
       });
 
       listParent.appendChild(li);
+      showInfoPokemon(li);
     }
   }
 
